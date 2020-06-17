@@ -18,7 +18,7 @@ int HeroFinder(int codes[], int NumberToFind, int size)
 {
 	//Your code goes here :D, feel free to use as many functions as needed
 }
-void main(void)
+int main(void)
 {
 	int codes[] ={-89, -86, -77, -70, -65, -59, -46, -38, -33, -31, -15, -7, -3, 2, 46, 70, 76, 82, 95, 112, 122,
 	126, 128, 135, 148, 152, 164, 169, 170, 173, 176, 201, 203, 208, 210, 222, 223, 225, 240, 262, 290, 292, 300,
@@ -201,11 +201,16 @@ void main(void)
 	29864, 29866, 29879, 29882, 29888, 29892, 29896, 29899, 29902, 29905, 29908, 29923, 29927, 29929, 29933, 29937,
 	29952, 29953, 29956, 29962, 29965, 29976, 29981};
 
-	int FirstCode = -89, SecondCode = 29981, ThirdCode = 13613;
+	int FirstCode, SecondCode, ThirdCode;
 	clock_t tic, toc;
 	double HippoTime, HeroTime;
 	int HippoIndex1, HippoIndex2, HippoIndex3, HeroIndex1, HeroIndex2, HeroIndex3;
 	int size = sizeof(codes)/4;
+
+	srand(time(NULL));
+	FirstCode = codes[rand() % 2999];
+	SecondCode = codes[rand() % 2999];
+	ThirdCode = codes[rand() % 2999];
 
 	tic = clock();
 
