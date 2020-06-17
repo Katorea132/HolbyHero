@@ -9,7 +9,6 @@ int HippoFinder(int codes[], int NumberToFind, int size)
 	for (index = 0; index < size; index++)
 		if (codes[index] == NumberToFind)
 		{
-			printf("%d\n", index);
 			return (index);
 		}
 	return (-1);
@@ -17,7 +16,7 @@ int HippoFinder(int codes[], int NumberToFind, int size)
 
 int HeroFinder(int codes[], int NumberToFind, int size)
 {
-	//Your code goes here, add as many functions as needed :D
+	//Your code goes here :D, feel free to use as many functions as needed
 }
 void main(void)
 {
@@ -202,7 +201,7 @@ void main(void)
 	29864, 29866, 29879, 29882, 29888, 29892, 29896, 29899, 29902, 29905, 29908, 29923, 29927, 29929, 29933, 29937,
 	29952, 29953, 29956, 29962, 29965, 29976, 29981};
 
-	int FirstCode = 473, SecondCode = 20784, ThirdCode = 4091;
+	int FirstCode = -89, SecondCode = 29981, ThirdCode = 13613;
 	clock_t tic, toc;
 	double HippoTime, HeroTime;
 	int HippoIndex1, HippoIndex2, HippoIndex3, HeroIndex1, HeroIndex2, HeroIndex3;
@@ -212,7 +211,7 @@ void main(void)
 
 	HippoIndex1 = HippoFinder(codes, FirstCode, size);
 	HippoIndex2 = HippoFinder(codes, SecondCode, size);
-	HippoIndex3 = HippoFinder(codes,ThirdCode, size);
+	HippoIndex3 = HippoFinder(codes, ThirdCode, size);
 
 	toc = clock();
 
@@ -228,4 +227,11 @@ void main(void)
 	toc = clock();
 
 	HeroTime = (double)(toc - tic) / CLOCKS_PER_SEC;
+	printf("HeroFinder took: %f\n", HeroTime);
+
+	if (codes[HeroIndex1] == FirstCode &&
+	codes[HeroIndex2] == SecondCode &&
+	codes[HeroIndex3] == ThirdCode &&
+	HeroTime <= HippoTime)
+		printf("You did it! you defeated your own brain!\n");
 }
